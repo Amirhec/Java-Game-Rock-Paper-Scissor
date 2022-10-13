@@ -6,12 +6,42 @@
 //after testing is complete allow a prompt for the user to input the data to play the game
 // use loops for the game to have a best out of 5 round
 
+
+//Random computer generation works and prints to the console when logged
+
 function getComputerChoice(){
     let choices = ["rock","paper","scissor"];
     let randomChoice = choices[Math.floor(Math.random()*3)];
     return randomChoice;
 }
 
-console.log("computer selected " + getComputerChoice());
 
-// Random computer generation works and prints to the console
+
+// play round function works and later on work on user input because as of now it is constantly showing rock
+
+function playRound(playerSelection, computerSelection){
+    if(playerSelection === computerSelection){
+       return ("its a tie")
+
+    } else if(playerSelection === "rock" && computerSelection === "scissor"){
+      return ("you win! rock beats scissor ")
+
+    } else if(playerSelection === "paper" && computerSelection === "rock"){
+      return ("you win! paper beats rock")
+
+    } else if(playerSelection === "scissor" && computerSelection === "paper"){
+      return ("you win! scissor beats paper")
+
+    } else{
+      return("you lost! Betterluck next time")
+    }
+    
+
+}
+
+
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playerSelection);
+console.log(computerSelection);
+console.log(playRound(playerSelection, computerSelection));
