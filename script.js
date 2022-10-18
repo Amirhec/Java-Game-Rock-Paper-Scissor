@@ -7,6 +7,34 @@
 // use loops for the game to have a best out of 5 round
 
 
+
+
+// Allow user to pick rock paper or scissors and display it in the console. Make any user input make it lowercase
+// User input now correctly logs into the console.
+function getplayerChoice(){
+  let userOption = prompt("Pick rock,paper,or scissor").toLowerCase();
+  if(userOption === "rock" ){
+    return("rock")
+  }else if(userOption === "paper"){
+    return("paper")
+  }else if(userOption === "scissor"){
+    return("scissor")
+  } else{
+    alert("Input not valid. Please try again")
+  }
+
+}
+
+const playerSelection = getplayerChoice();
+console.log(playerSelection)
+
+
+
+
+
+
+
+// Allow computer to autogenerate their choice
 //Random computer generation works and prints to the console when logged
 
 function getComputerChoice(){
@@ -15,11 +43,13 @@ function getComputerChoice(){
     return randomChoice;
 }
 
-
+const computerSelection = getComputerChoice();
+console.log(computerSelection);
 
 // play round function works and later on work on user input because as of now it is constantly showing rock
 
 function playRound(playerSelection, computerSelection){
+  
     if(playerSelection === computerSelection){
        return ("its a tie")
 
@@ -33,15 +63,28 @@ function playRound(playerSelection, computerSelection){
       return ("you win! scissor beats paper")
 
     } else{
-      return("you lost! Betterluck next time")
+      return("you lost! Better luck next time")
     }
     
 
 }
 
+console.log(playRound(playerSelection, computerSelection))
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playerSelection);
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+// this is a new function that will loop the gameplay to a best of 5 play
+
+function game(){
+  for (let i = 0; i < 5; i++){
+
+    
+  }
+}
+
+
+
+
+
+
+
+
+
