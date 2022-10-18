@@ -16,6 +16,7 @@ let computerScore = 0
 // User input now correctly logs into the console.
 function getplayerChoice(){
   let userOption = prompt("Pick rock,paper,or scissor").toLowerCase();
+
   if(userOption === "rock" ){
     return("rock")
   }else if(userOption === "paper"){
@@ -49,32 +50,32 @@ function getComputerChoice(){
 // play round function works and later on work on user input because as of now it is constantly showing rock
 
 function playRound(playerSelection, computerSelection){
-console.log("user chose " + playerSelection);
-console.log("computer chose " + computerSelection);
+console.log("User chose " + playerSelection);
+console.log("Computer chose " + computerSelection);
     if(playerSelection === computerSelection){
-       return ("its a tie")
+       return ("Its a tie")
 
     } else if(playerSelection === "rock" && computerSelection === "scissor"){
       userScore++
-      return ("you win! rock beats scissor ")
+      return ("You win! rock beats scissor ")
 
     } else if(playerSelection === "paper" && computerSelection === "rock"){
       userScore++
-      return ("you win! paper beats rock")
+      return ("You win! paper beats rock")
 
     } else if(playerSelection === "scissor" && computerSelection === "paper"){
       userScore++
-      return ("you win! scissor beats paper")
+      return ("You win! scissor beats paper")
 
     } else if(playerSelection === "rock" && computerSelection === "paper"){
       computerScore++
-      return("you lose! paper beats rock")
+      return("You lose! paper beats rock")
     } else if(playerSelection === "paper" && computerSelection === "scissor"){
       computerScore++
-      return("you lose! scissor beats paper")
+      return("You lose! scissor beats paper")
     } else(playerSelection === "scissor" && computerSelection === "rock")
       computerScore++
-      return("you lose! rock beats scissor")
+      return("You lose! rock beats scissor")
     
 
 }
@@ -90,6 +91,7 @@ function game(){
     console.log(playRound(playerSelection, computerSelection))
     console.log("User score is "+ userScore)
     console.log("Computer score is " + computerScore)
+    console.log("________________________________________________________")
     
   }
 }
@@ -97,8 +99,19 @@ game();
 
 // this function will display the winner of the best of 5 series 
 
+function result(){
+  console.log("User Score is " + userScore);
+  console.log("Computer Score is "+ computerScore);
+  if(userScore > computerScore){
+    return("User won the best out of 5")
+  } else (computerScore < userScore)
+    return( "Computer won the best out of 5")
+  
 
 
+}
+
+console.log(result());
 
 
 
