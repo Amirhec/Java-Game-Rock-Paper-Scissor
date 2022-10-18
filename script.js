@@ -6,7 +6,10 @@
 //after testing is complete allow a prompt for the user to input the data to play the game
 // use loops for the game to have a best out of 5 round
 
+// add a player and user score in increments based on winner  
 
+let userScore = 0
+let computerScore = 0
 
 
 // Allow user to pick rock paper or scissors and display it in the console. Make any user input make it lowercase
@@ -25,7 +28,6 @@ function getplayerChoice(){
 
 }
 
-const playerSelection = getplayerChoice();
 
 
 
@@ -42,7 +44,7 @@ function getComputerChoice(){
     return randomChoice;
 }
 
-const computerSelection = getComputerChoice()
+
 
 // play round function works and later on work on user input because as of now it is constantly showing rock
 
@@ -53,29 +55,41 @@ console.log("computer chose " + computerSelection);
        return ("its a tie")
 
     } else if(playerSelection === "rock" && computerSelection === "scissor"){
+      userScore++
       return ("you win! rock beats scissor ")
 
     } else if(playerSelection === "paper" && computerSelection === "rock"){
+      userScore++
       return ("you win! paper beats rock")
 
     } else if(playerSelection === "scissor" && computerSelection === "paper"){
+      userScore++
       return ("you win! scissor beats paper")
 
-    } else{
-      return("you lost! Better luck next time")
-    }
+    } else if(playerSelection === "rock" && computerSelection === "paper"){
+      computerScore++
+      return("you lose! paper beats rock")
+    } else if(playerSelection === "paper" && computerSelection === "scissor"){
+      computerScore++
+      return("you lose! scissor beats paper")
+    } else(playerSelection === "scissor" && computerSelection === "rock")
+      computerScore++
+      return("you lose! rock beats scissor")
     
 
 }
 
-console.log(playRound(playerSelection, computerSelection))
+
 
 // this is a new function that will loop the gameplay to a best of 5 play
 
 function game(){
   for (let i = 0; i < 5; i++){
-
+    const playerSelection = getplayerChoice();
+    const computerSelection = getComputerChoice()
     console.log(playRound(playerSelection, computerSelection))
+    console.log("User score is "+ userScore)
+    console.log("Computer score is " + computerScore)
     
   }
 }
