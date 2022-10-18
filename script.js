@@ -26,7 +26,6 @@ function getplayerChoice(){
 }
 
 const playerSelection = getplayerChoice();
-console.log(playerSelection)
 
 
 
@@ -43,13 +42,13 @@ function getComputerChoice(){
     return randomChoice;
 }
 
-const computerSelection = getComputerChoice();
-console.log(computerSelection);
+const computerSelection = getComputerChoice()
 
 // play round function works and later on work on user input because as of now it is constantly showing rock
 
 function playRound(playerSelection, computerSelection){
-  
+console.log("user chose " + playerSelection);
+console.log("computer chose " + computerSelection);
     if(playerSelection === computerSelection){
        return ("its a tie")
 
@@ -76,12 +75,13 @@ console.log(playRound(playerSelection, computerSelection))
 function game(){
   for (let i = 0; i < 5; i++){
 
+    console.log(playRound(playerSelection, computerSelection))
     
   }
 }
+game();
 
-
-
+// this function will display the winner of the best of 5 series 
 
 
 
