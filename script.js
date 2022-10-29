@@ -14,20 +14,30 @@ let computerScore = 0
 
 // Allow user to pick rock paper or scissors and display it in the console. Make any user input make it lowercase
 // User input now correctly logs into the console.
-function getplayerChoice(){
-  let userOption = prompt("Pick rock,paper,or scissor").toLowerCase();
+const rock = document.querySelector('#rock')
+const paper = document.querySelector('#paper')
+const scissor = document.querySelector('#scissor')
+const divOutcome = document.querySelector('.outcome')
 
-  if(userOption === "rock" ){
-    return("rock")
-  }else if(userOption === "paper"){
-    return("paper")
-  }else if(userOption === "scissor"){
-    return("scissor")
-  } else{
-    alert("Input not valid. Please try again")
-  }
+rock.addEventListener('click', () =>{
+  const computerSelection = getComputerChoice()
+  const playerSelection = 'rock'
+  playRound(playerSelection,computerSelection)
+  
+});
+paper.addEventListener('click', () =>{
+  const computerSelection = getComputerChoice()
+  const playerSelection = 'paper'
+  playRound(playerSelection,computerSelection)
+  
+});
+scissor.addEventListener('click', () =>{
+  const computerSelection = getComputerChoice()
+  const playerSelection = 'scissor'
+  playRound(playerSelection,computerSelection)
+  
+});
 
-}
 
 
 
@@ -84,34 +94,6 @@ console.log("Computer chose " + computerSelection);
 
 // this is a new function that will loop the gameplay to a best of 5 play
 
-function game(){
-  for (let i = 0; i < 5; i++){
-    const playerSelection = getplayerChoice();
-    const computerSelection = getComputerChoice()
-    console.log(playRound(playerSelection, computerSelection))
-    console.log("User score is "+ userScore)
-    console.log("Computer score is " + computerScore)
-    console.log("________________________________________________________")
-    
-  }
-}
-game();
-
-// this function will display the winner of the best of 5 series 
-
-function result(){
-  console.log("User Score is " + userScore);
-  console.log("Computer Score is "+ computerScore);
-  if(userScore > computerScore){
-    return("User won the best out of 5")
-  } else (computerScore < userScore)
-    return( "Computer won the best out of 5")
-  
-
-
-}
-
-console.log(result());
 
 
 
