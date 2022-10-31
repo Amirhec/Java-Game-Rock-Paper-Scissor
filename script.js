@@ -60,33 +60,47 @@ function getComputerChoice(){
 // play round function works and later on work on user input because as of now it is constantly showing rock
 
 function playRound(playerSelection, computerSelection){
-console.log("User chose " + playerSelection);
-console.log("Computer chose " + computerSelection);
+
     if(playerSelection === computerSelection){
-       return ("Its a tie")
+      const p = document.createElement('p')
+      p.innerText = "You tied with the computer"
+      divOutcome.appendChild(p)
 
     } else if(playerSelection === "rock" && computerSelection === "scissor"){
       userScore++
-      return ("You win! rock beats scissor ")
+      const p = document.createElement('p')
+      p.innerText = "You win! rock beats scissor"
+      divOutcome.appendChild(p)
 
     } else if(playerSelection === "paper" && computerSelection === "rock"){
       userScore++
-      return ("You win! paper beats rock")
+      const p = document.createElement('p')
+      p.innerText = "You win! paper beats rock"
+      divOutcome.appendChild(p)
 
     } else if(playerSelection === "scissor" && computerSelection === "paper"){
       userScore++
-      return ("You win! scissor beats paper")
+      const p = document.createElement('p')
+      p.innerText = "You win! scissor beats paper"
+      divOutcome.appendChild(p)
 
     } else if(playerSelection === "rock" && computerSelection === "paper"){
       computerScore++
-      return("You lose! paper beats rock")
+      const p = document.createElement('p')
+      p.innerText = "You lose! paper beats rock"
+      divOutcome.appendChild(p)
     } else if(playerSelection === "paper" && computerSelection === "scissor"){
       computerScore++
-      return("You lose! scissor beats paper")
-    } else(playerSelection === "scissor" && computerSelection === "rock")
+      const p = document.createElement('p')
+      p.innerText = "You lose! scissor beats paper"
+      divOutcome.appendChild(p)
+      
+    } else if (playerSelection === "scissor" && computerSelection === "rock"){
       computerScore++
-      return("You lose! rock beats scissor")
-    
+      const p = document.createElement('p')
+      p.innerText = "you lose! rock beats scissor"
+      divOutcome.appendChild(p)
+    }
 
 }
 
