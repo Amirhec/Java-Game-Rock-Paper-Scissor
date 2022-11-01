@@ -18,23 +18,35 @@ const rock = document.querySelector('#rock')
 const paper = document.querySelector('#paper')
 const scissor = document.querySelector('#scissor')
 const divOutcome = document.querySelector('.outcome')
+const score = document.querySelector('.score')
+const userScoreCount = document.querySelector('.user-score')
+const computerScoreCount = document.querySelector('.computer-score')
+
 
 rock.addEventListener('click', () =>{
   const computerSelection = getComputerChoice()
   const playerSelection = 'rock'
   playRound(playerSelection,computerSelection)
+  runningScore(userScore,computerScore)
+  roundWinner(computerScore,userScore)
+  
+
   
 });
 paper.addEventListener('click', () =>{
   const computerSelection = getComputerChoice()
   const playerSelection = 'paper'
   playRound(playerSelection,computerSelection)
+  runningScore(userScore,computerScore)
+  roundWinner(computerScore,userScore)
   
 });
 scissor.addEventListener('click', () =>{
   const computerSelection = getComputerChoice()
   const playerSelection = 'scissor'
   playRound(playerSelection,computerSelection)
+  runningScore(userScore,computerScore)
+  roundWinner(computerScore,userScore)
   
 });
 
@@ -60,7 +72,7 @@ function getComputerChoice(){
 // play round function works and later on work on user input because as of now it is constantly showing rock
 
 function playRound(playerSelection, computerSelection){
-
+console.log("user", +userScore, "computer", +computerScore)
     if(playerSelection === computerSelection){
       const p = document.createElement('p')
       p.innerText = "You tied with the computer"
@@ -106,7 +118,32 @@ function playRound(playerSelection, computerSelection){
 
 
 
-// this is a new function that will loop the gameplay to a best of 5 play
+
+function runningScore(userScore,computerScore){
+  userScoreCount.innerText = `User ${userScore}`
+  computerScoreCount.innerText = `Computer ${computerScore}`
+  
+
+}
+
+
+function roundWinner(computerScore, userScore){
+    if (computerScore === 3){
+      const p = document.createElement('p')
+      p.innerText = "Computer Wins Rounds"
+      divOutcome.append(p)
+
+    } 
+    
+    else if (userScore === 3){
+      const p = document.createElement('p')
+      p.innerText = "Player Wins Rounds"
+      divOutcome.append(p)
+    
+    }
+
+}
+
 
 
 
