@@ -120,8 +120,8 @@ console.log("user", +userScore, "computer", +computerScore)
 
 
 function runningScore(userScore,computerScore){
-  userScoreCount.innerText = `User ${userScore}`
-  computerScoreCount.innerText = `Computer ${computerScore}`
+  userScoreCount.innerText = `User: ${userScore}`
+  computerScoreCount.innerText = `Computer: ${computerScore}`
   
 
 }
